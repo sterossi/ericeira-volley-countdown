@@ -1,0 +1,198 @@
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #f5f7f6;
+  overflow-x: hidden;
+}
+
+/* Full-bleed background photo with a slow, subtle Ken Burns zoom */
+.bg {
+  position: fixed;
+  inset: 0;
+  background-image: url("assets/ericeira-praia-pescadores.jpg");
+  background-size: cover;
+  background-position: center 60%;
+  z-index: -2;
+  animation: kenburns 40s ease-in-out infinite alternate;
+}
+
+@keyframes kenburns {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+
+/* Darkening gradient so the text stays readable over the photo */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(4, 12, 20, 0.55) 0%, rgba(4, 12, 20, 0.35) 40%, rgba(4, 12, 20, 0.75) 100%);
+}
+
+.flag-badge {
+  position: fixed;
+  top: clamp(16px, 4vw, 32px);
+  right: clamp(16px, 4vw, 32px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: calc(100vw - 32px);
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  animation: fade-in 1s ease 0.2s both;
+}
+
+.flag-emoji {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.stage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  gap: 6px;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(245, 247, 246, 0.75);
+  animation: fade-in 0.8s ease both;
+}
+
+h1 {
+  margin: 6px 0 0;
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 6vw, 3.75rem);
+  letter-spacing: -0.01em;
+  animation: fade-in 0.8s ease 0.1s both;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  color: rgba(245, 247, 246, 0.8);
+  animation: fade-in 0.8s ease 0.2s both;
+}
+
+.counter {
+  margin-top: clamp(32px, 6vw, 56px);
+  animation: fade-in 1s ease 0.3s both;
+}
+
+.counter-value {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-weight: 700;
+  font-size: clamp(3.5rem, 14vw, 9rem);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  text-shadow: 0 8px 40px rgba(0, 0, 0, 0.45);
+}
+
+.counter-label {
+  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+  font-weight: 600;
+  color: rgba(245, 247, 246, 0.7);
+}
+
+.human-readable {
+  margin: clamp(18px, 3vw, 28px) 0 0;
+  font-size: 0.95rem;
+  color: rgba(245, 247, 246, 0.75);
+  animation: fade-in 1s ease 0.4s both;
+}
+
+.calendar-link {
+  margin-top: 22px;
+  color: #f5f7f6;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background 0.2s ease, transform 0.2s ease;
+  animation: fade-in 1s ease 0.5s both;
+}
+
+.calendar-link:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+.credit {
+  position: fixed;
+  bottom: 10px;
+  left: 12px;
+  font-size: 0.65rem;
+  color: rgba(245, 247, 246, 0.5);
+  z-index: 1;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg {
+    animation: none;
+  }
+  .flag-badge, h1, .eyebrow, .subtitle, .counter, .human-readable, .calendar-link {
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .flag-badge span:last-child {
+    display: none;
+  }
+  .flag-badge {
+    padding: 10px;
+  }
+}

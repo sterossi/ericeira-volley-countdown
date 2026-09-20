@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ericeira Beach Volley Camp — Countdown</title>
+  <meta name="description" content="Countdown to the Beach Volley Camp at Praia dos Pescadores, Ericeira, Portugal — October 10, 2026." />
+
+  <meta property="og:title" content="Ericeira Beach Volley Camp — Countdown" />
+  <meta property="og:description" content="Counting down to the Beach Volley Camp at Praia dos Pescadores, Ericeira, Portugal." />
+  <meta property="og:image" content="assets/ericeira-praia-pescadores.jpg" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏐</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="bg" role="presentation"></div>
+  <div class="overlay" role="presentation"></div>
+
+  <div class="flag-badge">
+    <span class="flag-emoji" aria-hidden="true">🇵🇹</span>
+    <span>Ericeira, Portugal</span>
+  </div>
+
+  <main class="stage">
+    <p class="eyebrow">Beach Volley Camp</p>
+    <h1>Praia dos Pescadores</h1>
+    <p class="subtitle">October 10, 2026 · Ericeira, Portugal</p>
+
+    <section class="counter" aria-label="Countdown to the camp start">
+      <div class="counter-value" id="seconds" aria-live="off">—</div>
+      <div class="counter-label">seconds to kick-off</div>
+    </section>
+
+    <p class="human-readable" id="human-readable"></p>
+
+    <a class="calendar-link" id="calendar-link" target="_blank" rel="noopener">＋ Add to calendar</a>
+  </main>
+
+  <footer class="credit">
+    Photo: Paulo Juntas / Wikimedia Commons (CC BY-SA 2.5)
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
