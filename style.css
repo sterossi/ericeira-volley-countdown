@@ -22,10 +22,11 @@ body {
 .bg {
   position: fixed;
   inset: 0;
-  background-image: url("assets/ericeira-praia-pescadores.jpg");
+  background-image: url("assets/ericeira-cliff-beach.webp");
   background-size: cover;
-  background-position: center 60%;
+  background-position: center 55%;
   z-index: -2;
+  filter: sepia(0.35) saturate(1.6) hue-rotate(-14deg) brightness(0.95) contrast(1.05);
   animation: kenburns 40s ease-in-out infinite alternate;
 }
 
@@ -40,7 +41,9 @@ body {
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(180deg, rgba(4, 12, 20, 0.55) 0%, rgba(4, 12, 20, 0.35) 40%, rgba(4, 12, 20, 0.75) 100%);
+    radial-gradient(65% 60% at 50% 56%, rgba(4, 12, 20, 0.6) 0%, rgba(4, 12, 20, 0) 100%),
+    linear-gradient(180deg, rgba(4, 12, 20, 0.55) 0%, rgba(4, 12, 20, 0.32) 40%, rgba(4, 12, 20, 0.78) 100%),
+    linear-gradient(180deg, rgba(120, 45, 95, 0.32) 0%, rgba(255, 140, 60, 0.32) 38%, rgba(255, 90, 70, 0.22) 55%, rgba(35, 18, 40, 0.28) 100%);
 }
 
 .flag-badge {
@@ -62,6 +65,7 @@ body {
   letter-spacing: 0.02em;
   white-space: nowrap;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
   animation: fade-in 1s ease 0.2s both;
 }
 
@@ -82,12 +86,13 @@ body {
 }
 
 .eyebrow {
-  margin: 0;
+  margin: 0 -0.3em 0 0;
   text-transform: uppercase;
   letter-spacing: 0.3em;
   font-size: 0.75rem;
   font-weight: 600;
-  color: rgba(245, 247, 246, 0.75);
+  color: rgba(245, 247, 246, 0.85);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
   animation: fade-in 0.8s ease both;
 }
 
@@ -97,66 +102,126 @@ h1 {
   font-weight: 700;
   font-size: clamp(2rem, 6vw, 3.75rem);
   letter-spacing: -0.01em;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
   animation: fade-in 0.8s ease 0.1s both;
 }
 
 .subtitle {
   margin: 6px 0 0;
   font-size: clamp(0.9rem, 2vw, 1.05rem);
-  color: rgba(245, 247, 246, 0.8);
+  color: rgba(245, 247, 246, 0.88);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
   animation: fade-in 0.8s ease 0.2s both;
+}
+
+.tagline {
+  margin: 10px 0 0;
+  font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+  color: rgba(245, 247, 246, 0.75);
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  animation: fade-in 0.8s ease 0.3s both;
 }
 
 .counter {
   margin-top: clamp(32px, 6vw, 56px);
-  animation: fade-in 1s ease 0.3s both;
-}
-
-.counter-value {
-  font-family: "Space Grotesk", "Inter", sans-serif;
-  font-weight: 700;
-  font-size: clamp(3.5rem, 14vw, 9rem);
-  line-height: 1;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: -0.02em;
-  text-shadow: 0 8px 40px rgba(0, 0, 0, 0.45);
-}
-
-.counter-label {
-  margin-top: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  font-size: clamp(0.7rem, 1.5vw, 0.85rem);
-  font-weight: 600;
-  color: rgba(245, 247, 246, 0.7);
-}
-
-.human-readable {
-  margin: clamp(18px, 3vw, 28px) 0 0;
-  font-size: 0.95rem;
-  color: rgba(245, 247, 246, 0.75);
   animation: fade-in 1s ease 0.4s both;
 }
 
-.calendar-link {
-  margin-top: 22px;
-  color: #f5f7f6;
-  text-decoration: none;
-  font-size: 0.9rem;
+.counter-value {
+  max-width: 46rem;
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.4rem, 4vw, 2.5rem);
+  line-height: 1.35;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6), 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+.counter-value .sign {
+  margin-right: 1px;
+}
+
+.counter-value .unit {
   font-weight: 500;
-  padding: 10px 20px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  transition: background 0.2s ease, transform 0.2s ease;
+  font-size: 0.5em;
+  letter-spacing: 0.02em;
+  color: rgba(245, 247, 246, 0.85);
+}
+
+.reactions {
+  display: flex;
+  gap: clamp(10px, 2.5vw, 16px);
+  margin-top: clamp(28px, 5vw, 44px);
   animation: fade-in 1s ease 0.5s both;
 }
 
-.calendar-link:hover {
+.reaction-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(48px, 10vw, 58px);
+  height: clamp(48px, 10vw, 58px);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  font-size: clamp(1.3rem, 4vw, 1.6rem);
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+}
+
+.reaction-btn:hover {
+  transform: translateY(-3px) scale(1.06);
   background: rgba(255, 255, 255, 0.18);
-  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+}
+
+.reaction-btn:active,
+.reaction-btn.is-pressed {
+  transform: scale(0.92);
+}
+
+.reaction-btn:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 3px;
+}
+
+.reaction-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.reaction-pop {
+  position: fixed;
+  transform: translate(-50%, 0);
+  font-size: 2rem;
+  line-height: 1;
+  will-change: transform, opacity;
+  animation: float-up ease-out forwards;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35));
+}
+
+@keyframes float-up {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0) scale(0.4) rotate(0deg);
+  }
+  15% {
+    opacity: 1;
+    transform: translate(calc(-50% + var(--drift) * 0.2), -14vh) scale(1.15) rotate(calc(var(--rotate) * 0.3));
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--drift)), -78vh) scale(0.9) rotate(var(--rotate));
+  }
 }
 
 .credit {
@@ -183,9 +248,18 @@ h1 {
   .bg {
     animation: none;
   }
-  .flag-badge, h1, .eyebrow, .subtitle, .counter, .human-readable, .calendar-link {
+  .flag-badge, h1, .eyebrow, .subtitle, .tagline, .counter, .reactions {
     animation: none;
   }
+  .reaction-pop {
+    animation-name: float-up-reduced;
+  }
+}
+
+@keyframes float-up-reduced {
+  0% { opacity: 0; transform: translate(-50%, 0) scale(1); }
+  20% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, -20vh) scale(1); }
 }
 
 @media (max-width: 480px) {

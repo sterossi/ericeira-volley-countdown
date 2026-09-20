@@ -8,7 +8,7 @@
 
   <meta property="og:title" content="Ericeira Beach Volley Camp — Countdown" />
   <meta property="og:description" content="Counting down to the Beach Volley Camp at Praia dos Pescadores, Ericeira, Portugal." />
-  <meta property="og:image" content="assets/ericeira-praia-pescadores.jpg" />
+  <meta property="og:image" content="assets/ericeira-cliff-beach.webp" />
   <meta property="og:type" content="website" />
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏐</text></svg>" />
@@ -23,6 +23,7 @@
 
   <div class="bg" role="presentation"></div>
   <div class="overlay" role="presentation"></div>
+  <div class="reaction-layer" aria-hidden="true"></div>
 
   <div class="flag-badge">
     <span class="flag-emoji" aria-hidden="true">🇵🇹</span>
@@ -30,23 +31,23 @@
   </div>
 
   <main class="stage">
-    <p class="eyebrow">Beach Volley Camp</p>
-    <h1>Praia dos Pescadores</h1>
-    <p class="subtitle">October 10, 2026 · Ericeira, Portugal</p>
+    <p class="eyebrow">Road to Beach Volley Camp</p>
+    <h1>Ericeira, Portugal</h1>
+    <p class="subtitle">October 10, 2026 · 17:00 · Praia dos Pescadores</p>
+    <p class="tagline"><span aria-hidden="true">🇵🇹</span> Volley, sun, waves &amp; pastéis de nata <span aria-hidden="true">🍮</span></p>
 
     <section class="counter" aria-label="Countdown to the camp start">
-      <div class="counter-value" id="seconds" aria-live="off">—</div>
-      <div class="counter-label">seconds to kick-off</div>
+      <div class="counter-value" id="countdown" aria-live="off">—</div>
     </section>
 
-    <p class="human-readable" id="human-readable"></p>
-
-    <a class="calendar-link" id="calendar-link" target="_blank" rel="noopener">＋ Add to calendar</a>
+    <section class="reactions" aria-label="Send a reaction">
+      <button class="reaction-btn" type="button" data-emoji="☀️" aria-label="Sun">☀️</button>
+      <button class="reaction-btn" type="button" data-emoji="🌊" aria-label="Waves">🌊</button>
+      <button class="reaction-btn" type="button" data-emoji="🍮" aria-label="Pastel de nata">🍮</button>
+      <button class="reaction-btn" type="button" data-emoji="🏐" aria-label="Volleyball">🏐</button>
+    </section>
   </main>
 
-  <footer class="credit">
-    Photo: Paulo Juntas / Wikimedia Commons (CC BY-SA 2.5)
-  </footer>
 
   <script src="script.js"></script>
 </body>
