@@ -332,10 +332,9 @@ h1 {
   .flag-badge {
     padding: 10px;
   }
-  .music-btn-label {
-    display: none;
-  }
   .music-btn {
-    padding: 12px;
+    padding: 10px 16px;
+    gap: 8px;
+    font-size: 0.85rem;
   }
 }
