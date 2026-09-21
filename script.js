@@ -96,5 +96,5 @@ soundtrack.addEventListener("pause", () => {
   musicToggle.setAttribute("aria-pressed", "false");
   musicToggle.setAttribute("aria-label", "Play background music");
   musicIcon.textContent = "🔇";
-  musicLabel.textContent = "Play music";
+  musicLabel.textContent = "Sound on";
 });
