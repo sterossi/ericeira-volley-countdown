@@ -71,3 +71,30 @@ document.querySelectorAll(".reaction-btn").forEach((button) => {
     setTimeout(() => button.classList.remove("is-pressed"), 180);
   });
 });
+
+const soundtrack = document.getElementById("soundtrack");
+const musicToggle = document.getElementById("musicToggle");
+const musicIcon = musicToggle.querySelector(".music-btn-icon");
+const musicLabel = musicToggle.querySelector(".music-btn-label");
+
+musicToggle.addEventListener("click", () => {
+  if (soundtrack.paused) {
+    soundtrack.play();
+  } else {
+    soundtrack.pause();
+  }
+});
+
+soundtrack.addEventListener("play", () => {
+  musicToggle.setAttribute("aria-pressed", "true");
+  musicToggle.setAttribute("aria-label", "Mute background music");
+  musicIcon.textContent = "🔊";
+  musicLabel.textContent = "Sound off";
+});
+
+soundtrack.addEventListener("pause", () => {
+  musicToggle.setAttribute("aria-pressed", "false");
+  musicToggle.setAttribute("aria-label", "Play background music");
+  musicIcon.textContent = "🔇";
+  musicLabel.textContent = "Play music";
+});

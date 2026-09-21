@@ -46,6 +46,69 @@ body {
     linear-gradient(180deg, rgba(120, 45, 95, 0.32) 0%, rgba(255, 140, 60, 0.32) 38%, rgba(255, 90, 70, 0.22) 55%, rgba(35, 18, 40, 0.28) 100%);
 }
 
+.music-btn {
+  position: fixed;
+  top: clamp(16px, 4vw, 32px);
+  left: clamp(16px, 4vw, 32px);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff8c3c 0%, #ff5a46 100%);
+  color: #1a0f0a;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(255, 90, 70, 0.5), 0 0 0 2px rgba(255, 255, 255, 0.35);
+  animation: fade-in 1s ease 0.2s both, music-pulse 2.2s ease-in-out infinite;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.music-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 32px rgba(255, 90, 70, 0.6), 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.music-btn:active {
+  transform: scale(0.95);
+}
+
+.music-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.music-btn-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.music-btn[aria-pressed="true"] {
+  background: linear-gradient(135deg, #2ee6a6 0%, #1fb5d1 100%);
+  box-shadow: 0 6px 24px rgba(46, 230, 166, 0.5), 0 0 0 2px rgba(255, 255, 255, 0.35);
+  animation: fade-in 1s ease 0.2s both;
+}
+
+.music-btn[aria-pressed="true"]:hover {
+  box-shadow: 0 10px 32px rgba(46, 230, 166, 0.6), 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes music-pulse {
+  0%, 100% { box-shadow: 0 6px 24px rgba(255, 90, 70, 0.5), 0 0 0 2px rgba(255, 255, 255, 0.35); }
+  50% { box-shadow: 0 6px 30px rgba(255, 90, 70, 0.75), 0 0 0 5px rgba(255, 255, 255, 0.15); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .music-btn {
+    animation: none;
+  }
+}
+
 .flag-badge {
   position: fixed;
   top: clamp(16px, 4vw, 32px);
@@ -268,5 +331,11 @@ h1 {
   }
   .flag-badge {
     padding: 10px;
+  }
+  .music-btn-label {
+    display: none;
+  }
+  .music-btn {
+    padding: 12px;
   }
 }
