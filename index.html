@@ -27,10 +27,18 @@
 
   <audio id="soundtrack" src="assets/soundtrack.mp3" loop preload="none"></audio>
 
-  <button class="music-btn" id="musicToggle" type="button" aria-pressed="false" aria-label="Play background music">
-    <span class="music-btn-icon" aria-hidden="true">🔇</span>
-    <span class="music-btn-label">Sound on</span>
-  </button>
+  <div class="music-widget">
+    <button class="music-btn" id="musicToggle" type="button" aria-pressed="false" aria-label="Play background music">
+      <span class="music-btn-icon" aria-hidden="true">🔇</span>
+      <span class="music-btn-label">Sound on</span>
+    </button>
+  </div>
+
+  <div class="lyrics-ticker" id="lyricsTicker" aria-hidden="true">
+    <span class="lyrics-line lyrics-line--prev" id="lyricsPrev"></span>
+    <span class="lyrics-line lyrics-line--current" id="lyricsCurrent">Já Sei Namorar — Tribalistas</span>
+    <span class="lyrics-line lyrics-line--next" id="lyricsNext"></span>
+  </div>
 
   <div class="flag-badge">
     <span class="flag-emoji" aria-hidden="true">🇵🇹</span>
@@ -38,10 +46,9 @@
   </div>
 
   <main class="stage">
-    <p class="eyebrow">Road to Beach Volley Camp</p>
     <h1>Ericeira, Portugal</h1>
     <p class="subtitle">October 10, 2026 · 17:00 · Praia dos Pescadores</p>
-    <p class="tagline"><span aria-hidden="true">🇵🇹</span> Volley, sun, waves &amp; pastéis de nata <span aria-hidden="true">🍮</span></p>
+    <p class="tagline"><span aria-hidden="true">🏐</span> Beach volley, sun, waves, pastéis de nata <span aria-hidden="true">🍮</span></p>
 
     <section class="counter" aria-label="Countdown to the camp start">
       <div class="counter-value" id="countdown" aria-live="off">—</div>
